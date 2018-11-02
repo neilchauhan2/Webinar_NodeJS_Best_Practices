@@ -1,12 +1,35 @@
+<!-- {{#each articles as |article|}}
+<section>
+    <h1>{{article.title}}</h1>
+    <small> - by {{article.author.username}}</small>
+    <div>
+        {{article.content}}
+    </div>
+    <div>
+        <a href="/articles/{{article.id}}">read more...</a>
+    </div>
+</section>
+{{/each}} -->
+
 {{#each articles as |article|}}
-    <section>
-        <h1>{{article.title}}</h1>
-        <small> - by {{article.author.username}}</small>
-        <div>
-            {{article.content}}
+<section class="section">
+    <div class="card">
+        <div class="card-content">
+            <h1 class="title is-size-2">
+                {{article.title}}
+            </h1>
+            <h2 class="subtitle is-size-4">
+                @{{article.author.username}}
+            </h2>
+            <p class="card-content">
+                {{article.content}}
+            </p>
+            <footer class="card-footer">
+                <p class="card-footer-item">
+                    <a href="/articles/{{article.id}}"> Read more....</a>
+                </p>
+            </footer>
         </div>
-        <div>
-            <a href="/articles/{{article.id}}">read more...</a>
-        </div>
-    </section>
+    </div>
+</section>
 {{/each}}
